@@ -4,12 +4,15 @@
 
 <form action="/output" method="post">
   <div class="form-group">
-    <label for="riddleone">This is riddle one</label>
+    <h2><%= @question1 %></h2>
+    <label for="riddle"></label>
     <input name="riddleone" class="form-control" type="text">
-    <label for="riddletwo">This is riddle two</label>
+    <h2><%= @question2 %></h2>
+    <label for="riddletwo"></label>
     <input name="riddletwo" class="form-control" type="text">
-    <label for="riddlethree">This is riddle three</label>
+    <h2><%= @question3 %></h2>
+    <label for="riddlethree"></label>
     <input name="riddlethree" class="form-control" type="text">
   </div>
-  <button type="submit" class="btn">What is it?!</button>
+  <button type="submit" class="btn btn-danger">GO!</button>
 </form>

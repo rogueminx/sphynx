@@ -3,8 +3,20 @@ require ('rspec')
 require ('pry')
 
 describe('#sphynx') do
-  it('return random key value pair (riddle)') do
-    answer = Riddle.new()
-    expect(answer.riddler("We're five little items of an everyday sort; you'll find us all in 'a tennis court","vowels")).to(eq(true))
+  it('return true for correct answer for randomly generated question for riddle one') do
+    answer = Riddle.new("vowels")
+    expect(answer.riddler()).to(eq(true))
+  end
+  it('return true for correct answer for randomly generated question for riddle two') do
+    answer = Riddle.new("your name")
+    expect(answer.riddler()).to(eq(true))
+  end
+  it('return true for correct answer for randomly generated question for riddle three') do
+    answer = Riddle.new("the letter e")
+    expect(answer.riddler()).to(eq(true))
+  end
+  it('return true for correct answer for randomly generated question for riddle three') do
+    answer = Riddle.new(".iaoeuizsu")
+    expect(answer.riddler()).to(eq(false))
   end
 end
