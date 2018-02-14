@@ -5,7 +5,7 @@ require('./lib/sphynx')
 require('pry')
 
 get('/') do
-  answers = Riddle.new(@riddle)
+  answers = Riddle.new(@riddleone, @riddletwo, @riddlethree)
   question1 = answers.question_generator
   @question1 = question1[0]
   @question2 = question1[1]
@@ -14,11 +14,10 @@ get('/') do
 end
 
 post ('/output') do
-  @riddle = params.fetch("riddleone")
-  answers = Riddle.new(@riddle)
-  @question1 = answers.question_generator
-  @question2 = answers.question_generator
-  @question3 = answers.question_generator
+  answers = Riddle.new(@riddleone, @riddletwo, @riddlethree)
+  @riddleone = params.fetch('riddleone')
+  @riddletwo = params.fetch('riddletwo')
+  @riddlethree = params.fetch('riddlethree')
   @correct_or_wrong = answers.riddler
   erb(:output)
 
